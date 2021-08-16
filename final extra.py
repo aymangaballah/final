@@ -69,7 +69,21 @@ def movement1 ():
 
     pygame.display.update()
 
+def movement2():
 
+    global xm  # x for mouse only
+    global ym  # y for mouse only
+    key = pygame.key.get_pressed()
+    if key[pygame.K_RIGHT] and xm+width+step<=720:
+        xm+=104
+    if key[pygame.K_LEFT] and xm-step>=0:
+        xm-=104
+    if key[pygame.K_UP] and ym-step>=0:
+        ym-=104
+    if key[pygame.K_DOWN] and ym+hight+step<=720:
+        ym+=104
+
+    pygame.display.update()
 
 #define pygame and other variables
 
@@ -121,6 +135,7 @@ while True:
         exit()
 
  movement1()
+ movement2()
 
 
 
